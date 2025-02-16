@@ -1,0 +1,9 @@
+Default Error Handling
+				By default, Spring Boot provides an ErrorController that returns an error response in JSON format for REST APIs or an error page for web applications.
+
+				{
+					"timestamp": "2023-01-01T12:00:00.000",
+					"status": 404,
+					"error": "Not Found",
+					"path": "/invalid-path"
+				}

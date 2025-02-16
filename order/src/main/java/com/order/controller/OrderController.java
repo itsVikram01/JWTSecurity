@@ -1,6 +1,7 @@
 package com.order.controller;
 
-import com.order.exception.OrderNotFoundException;
+import com.order.exception.exceptionHandlingInSpringboot.usingResponseStatus.ResponseStatusExample;
+import com.order.exception.exceptionHandlingInSpringboot.usingRestControllerAdvice.OrderNotFoundException;
 import com.order.model.Orders;
 import com.order.service.OrderService;
 import org.springframework.http.HttpStatus;
@@ -20,6 +21,12 @@ public class OrderController {
         this.orderService = orderService;
     }
 
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException ex) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(ex.getMessage());
+    }
+
     @GetMapping
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     //@PreAuthorize("hasRole('ADMIN') or hasAuthority('ADMIN')")
@@ -35,7 +42,7 @@ public class OrderController {
             Orders order = orderService.getOrderById(id);
             return ResponseEntity.ok(order);
         } catch (OrderNotFoundException ex) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build(); // Or return a custom error response
+            throw new ResponseStatusExample("Product with ID " + id + " not found"); // Or return a response status .
         }
     }
 

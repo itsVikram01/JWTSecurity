@@ -1,6 +1,6 @@
 package com.order.service;
 
-import com.order.exception.OrderNotFoundException;
+import com.order.exception.exceptionHandlingInSpringboot.usingRestControllerAdvice.OrderNotFoundException;
 import com.order.model.Orders;
 import com.order.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
