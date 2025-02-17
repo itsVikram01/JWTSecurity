@@ -96,17 +96,28 @@
 		</dependency>
 
 
-		<!--. Add the Log4j2 starter:-->
-		<!--<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-log4j2</artifactId>
-		</dependency>-->
 
-		<!--. Exclude the default logging:-->
+		<!--. Exclude the default logging : provides support for SLF4J and Logback -->
 		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-logging</artifactId>
 			<scope>provided</scope>
+		</dependency>-->
+
+		<!--. Add the Log4j2 starter:-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+
+		<!--  include the SLF4J and Logback dependencies -->
+		<!--<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
 		</dependency>-->
 
 	</dependencies>
