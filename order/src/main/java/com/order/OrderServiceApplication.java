@@ -5,9 +5,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 
 @Slf4j
 @SpringBootApplication
+@EnableCaching
 public class OrderServiceApplication {
 	private static final Logger logger = LoggerFactory.getLogger(OrderServiceApplication.class);
 

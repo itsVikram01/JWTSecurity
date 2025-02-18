@@ -63,4 +63,12 @@ public class OrderController {
     public void deleteOrder(@PathVariable Long id) {
         orderService.deleteOrder(id);
     }
+
+
+
+    @GetMapping("/data")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public ResponseEntity<String> getData() {
+        return ResponseEntity.ok(orderService.getExpensiveData());
+    }
 }

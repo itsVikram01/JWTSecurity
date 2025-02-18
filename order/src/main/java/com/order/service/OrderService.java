@@ -4,6 +4,7 @@ import com.order.exception.exceptionHandlingInSpringboot.usingRestControllerAdvi
 import com.order.model.Orders;
 import com.order.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -37,5 +38,15 @@ public class OrderService {
 
     public void deleteOrder(Long id) {
         orderRepository.deleteById(id);
+    }
+
+    @Cacheable("exampleData")
+    public String getExpensiveData() {
+        try {
+            Thread.sleep(3000); // Simulate delay
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
+        return "Expensive Result";
     }
 }
