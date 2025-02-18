@@ -1,6 +1,6 @@
 <configuration>
     <!-- Optionally define a property (can be overridden by application.properties) -->
-    <springProperty scope="context" name="LOG_DIR" source="logging.file.path" defaultValue="./order/logs"/>
+    <springProperty scope="context" name="LOG_DIR" source="logging.file.path" defaultValue="./logs"/>
 
     <!-- Console Appender -->
     <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">

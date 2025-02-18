@@ -19,5 +19,6 @@ public class Orders {
     private String product;
     private int quantity;
     private double price;
+
 }
 
