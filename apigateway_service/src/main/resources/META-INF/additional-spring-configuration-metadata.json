@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "hystrix.command",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.command'"
+  },
+  {
+    "name": "hystrix.fallbackcmd",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.fallbackcmd'"
+  },
+  {
+    "name": "hystrix.execution.isolation.thread.timeout-in-millisecond",
+    "type": "java.lang.String",
+    "description": "A description for 'hystrix.execution.isolation.thread.timeout-in-millisecond'"
+  },
+  {
+    "name": "microservice.payment-service.endpoints.endpoint.uri",
+    "type": "java.lang.String",
+    "description": "A description for 'microservice.payment-service.endpoints.endpoint.uri'"
+  },
+  {
+    "name": "microservice.order-service.endpoints.endpoint.uri",
+    "type": "java.lang.String",
+    "description": "A description for 'microservice.order-service.endpoints.endpoint.uri'"
+  }
+]}

@@ -24,7 +24,7 @@ public class PaymentController {
         return paymentService.getAllPayments();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/payment/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public ResponseEntity<Payment> getPaymentById(@PathVariable Long id) {
         try {
@@ -35,13 +35,13 @@ public class PaymentController {
         }
     }
 
-    @PostMapping
+    @PostMapping("/payment/doPayment")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public Payment createPayment(@RequestBody Payment payment) {
         return paymentService.createPayment(payment);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/payment/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public Payment updatePayment(@PathVariable Long id, @RequestBody Payment payment) {
         return paymentService.updatePayment(id, payment);

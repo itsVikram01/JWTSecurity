@@ -1,0 +1,19 @@
+server:
+  port: 9007
+
+spring:
+  application:
+    name: CLOUD-CONFIG-SERVER
+
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/itsVikram01/cloudConfig
+
+#eureka:
+#  client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/

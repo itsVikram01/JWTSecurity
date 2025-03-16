@@ -3,6 +3,7 @@ package com.order.service;
 import com.order.exception.exceptionHandlingInSpringboot.usingRestControllerAdvice.OrderNotFoundException;
 import com.order.model.Orders;
 import com.order.repository.OrderRepository;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -49,4 +50,15 @@ public class OrderService {
         }
         return "Expensive Result";
     }
+
+    @CircuitBreaker(name = "exampleService", fallbackMethod = "fallback")
+    public String callExternalService() {
+        // Simulate external service call
+        return "Success";
+    }
+
+    public String fallback(Throwable t) {
+        return "Fallback Response";
+    }
+
 }

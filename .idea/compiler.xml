@@ -7,16 +7,26 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="payment" />
+        <module name="apigateway_service" />
+        <module name="hystrixdashboard-services" />
+        <module name="eureka_service" />
         <module name="auth" />
+        <module name="cloudConfig-server" />
+        <module name="payment" />
         <module name="user" />
+        <module name="apps" />
         <module name="order" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="apigateway_service" options="-parameters" />
+      <module name="apps" options="-parameters" />
       <module name="auth" options="-parameters" />
+      <module name="cloudConfig-server" options="-parameters" />
+      <module name="eureka_service" options="-parameters" />
+      <module name="hystrixdashboard-services" options="-parameters" />
       <module name="order" options="-parameters" />
       <module name="payment" options="-parameters" />
       <module name="user" options="-parameters" />

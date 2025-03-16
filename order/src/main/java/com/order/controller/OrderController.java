@@ -46,7 +46,7 @@ public class OrderController {
         }
     }
 
-    @PostMapping
+    @PostMapping("/order/bookOrder")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public Orders createOrder(@RequestBody Orders order) {
         return orderService.createOrder(order);
@@ -66,9 +66,16 @@ public class OrderController {
 
 
 
-    @GetMapping("/data")
+    @GetMapping("/caching")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
-    public ResponseEntity<String> getData() {
+    public ResponseEntity<String> getCachingData() {
         return ResponseEntity.ok(orderService.getExpensiveData());
     }
+
+    @GetMapping("/circuitBreaker")
+    @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
+    public ResponseEntity<String> getCircuitBreaker() {
+        return ResponseEntity.ok(orderService.callExternalService());
+    }
+
 }

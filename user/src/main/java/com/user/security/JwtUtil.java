@@ -95,7 +95,7 @@ public class JwtUtil {
 
     private Claims extractAllClaims(String token) {
         return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
-    }
+    }*/
 
     public String getUsernameFromToken(String token) {
         return Jwts.parser()
@@ -104,7 +104,7 @@ public class JwtUtil {
                 .parseSignedClaims(token)
                 .getPayload()
                 .getSubject();
-    }*/
+    }
 
     public List<String> getRolesFromToken(String token) {
         Claims claims = Jwts.parser()

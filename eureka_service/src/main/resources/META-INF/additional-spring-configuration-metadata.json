@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "eureka.server.wait-time-in-ms-when-sync-empty",
+    "type": "java.lang.String",
+    "description": "A description for 'eureka.server.wait-time-in-ms-when-sync-empty'"
+  },
+  {
+    "name": "eureka.dashboard.path",
+    "type": "java.lang.String",
+    "description": "A description for 'eureka.dashboard.path'"
+  }
+]}
